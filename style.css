@@ -1,0 +1,142 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  color: white;
+}
+
+.container {
+  width: 340px;
+  background-color: rgb(29, 27, 27);
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.currentDate {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid black;
+  width: 100%;
+  background-color: rgb(29, 27, 27);
+}
+
+.currentDate p {
+  font: 500 1.1rem sans-sarif;
+}
+
+.currentDate button,
+.current .month .btn button {
+  background-color: rgb(53, 53, 53);
+  position: relative;
+  bottom: 5px;
+  font: 600 25px sans-sarif;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  border: none;
+}
+
+.currentDate button:hover,
+.current .month .btn button:hover {
+  background-color: rgb(77, 77, 77);
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  vertical-align: middle;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.up {
+  position: relative;
+  top: 5px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.current {
+  background-color: rgb(53, 53, 53);
+}
+
+.current .month {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+
+.current .month .btn {
+  display: flex;
+  gap: 10px;
+}
+
+.dateBox {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.dateBox .weeks {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.dateBox .date {
+  display: grid;
+  text-align: center;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+/* .container {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.container .field {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.container .field select {
+  width: 30%;
+  background-color: black;
+  padding: 7px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-bottom: 1px dashed black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.container .box {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .box .date {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  text-align: center;
+}
+.container .box .weeks {
+  border: 2px dotted black;
+  border-radius: 20px;
+} */
