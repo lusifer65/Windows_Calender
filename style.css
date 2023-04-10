@@ -3,6 +3,7 @@
   padding: 0%;
   box-sizing: border-box;
   color: white;
+  font-family: "Geneva", Verdana, sans-serif;
 }
 
 .container {
@@ -24,10 +25,12 @@
 
 .currentDate p {
   font: 500 1.1rem sans-sarif;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  line-height: 20px;
 }
 
-.currentDate button,
-.current .month .btn button {
+.currentDate button {
   background-color: rgb(53, 53, 53);
   position: relative;
   bottom: 5px;
@@ -42,8 +45,7 @@
   border: none;
 }
 
-.currentDate button:hover,
-.current .month .btn button:hover {
+.currentDate button:hover{
   background-color: rgb(77, 77, 77);
 }
 
@@ -67,76 +69,3 @@
   -webkit-transform: rotate(-135deg);
 }
 
-.current {
-  background-color: rgb(53, 53, 53);
-}
-
-.current .month {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 20px;
-}
-
-.current .month .btn {
-  display: flex;
-  gap: 10px;
-}
-
-.dateBox {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-.dateBox .weeks {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto;
-}
-
-.dateBox .date {
-  display: grid;
-  text-align: center;
-  grid-template-columns: auto auto auto auto auto auto auto;
-}
-
-/* .container {
-  display: flex;
-  width: 400px;
-  flex-direction: column;
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 20px;
-}
-
-.container .field {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 10px;
-}
-
-.container .field select {
-  width: 30%;
-  background-color: black;
-  padding: 7px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: none;
-  border-bottom: 1px dashed black;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.container .box {
-  display: flex;
-  flex-direction: column;
-}
-
-.container .box .date {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto;
-  text-align: center;
-}
-.container .box .weeks {
-  border: 2px dotted black;
-  border-radius: 20px;
-} */

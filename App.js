@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { useEffect,useState } from "react/cjs/react.development";
-import Month from "./Component/Month";
+import Month from "./Component/card/Card";
 import { DaysInMonth, weekDays } from "./constant";
 
-import './style.css';
+import "./style.css";
+import Display from "./Component/DisplayBlock/Display";
+
 const App = () => {
-let date=new Date();
-const [isOpen,setOpen]=useState(true)
+  let date = new Date();
+  const [isOpen, setOpen] = useState(false);
   return (
-  <div className="container">
-  <div className="currentDate">
-  <p>{weekDays[date.getDay()]}, {date.getDate()} {Object.keys(DaysInMonth)[date.getMonth()]}</p>
-  <button onClick={()=>{setOpen(!isOpen)}}><i class={`arrow ${isOpen?'down':'up'}`}></i></button>
-  </div>
-  <Month isOpen={isOpen}/>
-  </div>
+    <div className="container">
+      <div className="currentDate">
+        <p>
+          {weekDays[date.getDay()]}, {date.getDate() + " "}
+          {Object.keys(DaysInMonth)[date.getMonth()]}
+        </p>
+        <button
+          onClick={() => {
+            setOpen(!isOpen);
+          }}
+        >
+          <i className={`arrow ${isOpen ? "down" : "up"}`}></i>
+        </button>
+      </div>
+      {/* <Month isOpen={isOpen} /> */}
+      <Display isOpen={isOpen}/>
+    </div>
   );
 };
 

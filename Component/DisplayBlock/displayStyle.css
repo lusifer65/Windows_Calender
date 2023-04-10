@@ -1,0 +1,56 @@
+.box {
+  background-color: rgb(53, 53, 53);
+  min-height: 330px;
+}
+
+.box .month .btn button {
+  background-color: rgb(53, 53, 53);
+  position: relative;
+  bottom: 5px;
+  font: 600 25px sans-sarif;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  border: none;
+}
+.box .month .btn button:hover {
+  background-color: rgb(77, 77, 77);
+}
+
+.box {
+  background-color: rgb(53, 53, 53);
+  min-height: 330px;
+}
+
+.box .month {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.box .month .btn {
+  display: flex;
+  gap: 10px;
+}
+
+.box .allMonth {
+  display: grid;
+  padding: 0px 20px;
+  row-gap: 10px;
+  grid-template-columns: auto auto auto auto;
+}
+
+.box .allMonth div{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box .allMonth div:hover{
+    background-color: rgb(95, 95, 95);
+}

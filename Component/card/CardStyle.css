@@ -1,0 +1,70 @@
+.current .month .btn button {
+  background-color: rgb(53, 53, 53);
+  position: relative;
+  bottom: 5px;
+  font: 600 25px sans-sarif;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  border: none;
+}
+.current .month .btn button:hover {
+  background-color: rgb(77, 77, 77);
+}
+
+.current {
+    background-color: rgb(53, 53, 53);
+    min-height: 330px;
+  }
+  
+  .current .month {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .current .month .btn {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .dateBox {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+  
+  .dateBox .weeks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  
+  .dateBox .date {
+    display: grid;
+    text-align: center;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    row-gap: 5px;
+    line-height: 28px;
+  }
+  
+  .dateBox .date p {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-sizing: content-box;
+    border-radius: 50%;
+  }
+  .dateBox .date p:hover{
+    background-color: rgb(64, 87, 64);
+    cursor: default;
+  }
+  
+  #circle{
+    background-color: green;
+    border-radius: 50%;
+  }
