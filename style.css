@@ -6,6 +6,10 @@
   font-family: "Geneva", Verdana, sans-serif;
 }
 
+p{
+  cursor: default;
+}
+
 .container {
   width: 340px;
   background-color: rgb(29, 27, 27);

@@ -1,52 +1,48 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { DaysInMonth, weekDays } from "../../constant";
 import "./CardStyle.css";
 
-const Month = ({ isOpen }) => {
-  const [currentMonth, setCurrentMonth] = useState(0);
-  const [currentYear, setCurrentYear] = useState(0);
+import { DaysInMonth, weekDays } from "../../constant";
+import { changeDate, DisplayType } from "../../redux/action";
+import Display from "../DisplayBlock/Display";
+import MonthDate from "../DisplayOption/MonthsDate";
+
+const Card = () => {
   const [startDay, setStartDay] = useState(0);
 
-  useEffect(() => {
-    const date = new Date();
-    setCurrentMonth(date.getMonth());
-    setCurrentYear(date.getFullYear());
-  }, []);
+  const months = Object.keys(DaysInMonth);
+
+  const {
+    isOpen,
+    pageType,
+    month: currentMonth,
+    year: currentYear,
+  } = useSelector((state) => state);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setStartDay(
-      new Date(`${parseInt(currentMonth) + 1}/01/${currentYear}`).getDay()
+      new Date(
+        `${parseInt(currentMonth) + 1}/01/${parseInt(currentYear)}`
+      ).getDay()
     );
   }, [currentYear, currentMonth]);
-
-  const months = Object.keys(DaysInMonth);
 
   //for month change by arrow
   const changeMonth = (value) => {
     if (currentMonth == 0 && value == -1) {
-      setCurrentMonth(11);
-      setCurrentYear(currentYear - 1);
+      dispatch(changeDate(11, currentYear - 1));
     } else if (currentMonth == 11 && value == 1) {
-      setCurrentMonth(0);
-      setCurrentYear(currentYear + 1);
+      dispatch(changeDate(0, currentYear + 1));
     } else {
-      setCurrentMonth(currentMonth + value);
+      dispatch(changeDate(currentMonth + value, currentYear));
     }
   };
 
-  // for checking date
-  const isToday = (date) => {
-    let currentDate = new Date();
-    return (
-      currentDate.getDate() === date &&
-      currentDate.getMonth() === currentMonth &&
-      currentDate.getFullYear() === currentYear
-    );
-  };
-
   //use to display week
-  const WeekDays = () => (
+  const Weeks = () => (
     <div className="weeks">
       {weekDays.map((day, index) => (
         <p key={index}>{day.substring(0, 3)}</p>
@@ -54,34 +50,26 @@ const Month = ({ isOpen }) => {
     </div>
   );
 
-  //use to display the date
-  const MonthDate = () => (
-    <div className="date">
-      {Array.from(
-        Array(DaysInMonth[months[currentMonth]] + startDay).keys()
-      ).map((element, index) => {
-        if (startDay > index) {
-          return <span key={index}></span>;
-        }
-        return (
-          <p
-            id={`${isToday(element - startDay + 1) ? "circle" : ""}`}
-            key={index}
-          >
-            {element - startDay + 1}
-          </p>
-        );
-      })}
-    </div>
-  );
-
   if (!isOpen) {
     return <React.Fragment></React.Fragment>;
   }
+
+  if (pageType === "month") {
+    return <Display />;
+  }
+  if (pageType === "year") {
+    return <h1>year</h1>;
+  }
+
   return (
     <div className="current">
       <div className="month">
-        <p>
+        <p
+          className="paraWithCursor"
+          onClick={() => {
+            dispatch(DisplayType("month"));
+          }}
+        >
           {months[currentMonth]}, {currentYear}
         </p>
         <div className="btn">
@@ -90,23 +78,27 @@ const Month = ({ isOpen }) => {
               changeMonth(-1);
             }}
           >
-            <i class="arrow up"></i>
+            <i className="arrow up"></i>
           </button>
           <button
             onClick={() => {
               changeMonth(1);
             }}
           >
-            <i class="arrow down"></i>
+            <i className="arrow down"></i>
           </button>
         </div>
       </div>
       <div className="dateBox">
-        <WeekDays />
-        <MonthDate />
+        <Weeks />
+        <MonthDate
+          startDay={startDay}
+          month={currentMonth}
+          year={currentYear}
+        />
       </div>
     </div>
   );
 };
 
-export default Month;
+export default Card;
