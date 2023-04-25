@@ -8,6 +8,7 @@ const intialState = {
 };
 
 const reducer = (state = intialState, action) => {
+  console.log("new change", state);
   switch (action.type) {
     case "PAGE_CHANGE":
       return { ...state, pageType: action.payload };
@@ -20,6 +21,10 @@ const reducer = (state = intialState, action) => {
       };
 
     case "DISPLAY_OPTION": {
+      console.log(new Date().getMonth());
+      if (state.isOpen) {
+        return intialState
+      }
       return {
         ...state,
         pageType: state.isOpen ? "date" : state.pageType,

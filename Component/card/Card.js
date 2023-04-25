@@ -5,8 +5,9 @@ import "./CardStyle.css";
 
 import { DaysInMonth, weekDays } from "../../constant";
 import { changeDate, DisplayType } from "../../redux/action";
-import Display from "../DisplayBlock/Display";
 import MonthDate from "../DisplayOption/MonthsDate";
+import Months from "../DisplayOption/Months";
+import Year from "../DisplayOption/Year";
 
 const Card = () => {
   const [startDay, setStartDay] = useState(0);
@@ -55,10 +56,10 @@ const Card = () => {
   }
 
   if (pageType === "month") {
-    return <Display />;
+    return <Months />;
   }
   if (pageType === "year") {
-    return <h1>year</h1>;
+    return <Year />;
   }
 
   return (
