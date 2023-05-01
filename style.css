@@ -6,8 +6,17 @@
   font-family: "Geneva", Verdana, sans-serif;
 }
 
-p{
+p {
   cursor: default;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  width: 100%;
+  font-family: "Lilita One", cursive;
+  text-decoration: underline;
+  margin-bottom: 1rem;
 }
 
 .container {
@@ -49,7 +58,7 @@ p{
   border: none;
 }
 
-.currentDate button:hover{
+.currentDate button:hover {
   background-color: rgb(77, 77, 77);
 }
 
@@ -72,4 +81,3 @@ p{
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }
-
