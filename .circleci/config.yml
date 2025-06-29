@@ -7,20 +7,6 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run:
-          name: Install dependencies
-          command: npm install
-      - run:
-          name: List project structure
-          command: find . -type f -name "*.js" -o -name "*.jsx" | head -20
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Run tests
           command: npm test -- --watchAll=false --verbose
