@@ -1,5 +1,6 @@
 //use to display the date
 
+import React from "react";
 import { DaysInMonth } from "../../constant";
 
 import { isToday } from "../utils";
