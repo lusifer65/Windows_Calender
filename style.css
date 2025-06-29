@@ -6,6 +6,11 @@
   font-family: "Geneva", Verdana, sans-serif;
 }
 
+body{
+  background-color: burlywood;
+  padding-top: 64px;
+}
+
 p {
   cursor: default;
 }
@@ -17,6 +22,7 @@ h1 {
   font-family: "Lilita One", cursive;
   text-decoration: underline;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .container {
