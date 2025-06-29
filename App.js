@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import Card from "./Component/card/Card";
+import Card from "./Component/Card/Card";
 import TitleBar from "./Component/DisplayOption/TitleBar";
 import store from "./redux/Store";
 import "./style.css";

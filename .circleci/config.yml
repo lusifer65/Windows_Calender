@@ -14,13 +14,16 @@ jobs:
       - run:
           name: Install dependencies
           command: npm install
+      - run:
+          name: List project structure
+          command: find . -type f -name "*.js" -o -name "*.jsx" | head -20
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Run tests
-          command: npm test -- --watchAll=false
+          command: npm test -- --watchAll=false --verbose
       - run:
           name: Build application
           command: npm run build
