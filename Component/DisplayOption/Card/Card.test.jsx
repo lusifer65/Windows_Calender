@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import Card from "./Card"; // Adjust the path as necessary
-import { DisplayType } from "../../redux/action";
+import { DisplayType } from "../../../redux/action";
 
 const mockStore = configureStore([]);
 
