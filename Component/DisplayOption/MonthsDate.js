@@ -3,7 +3,14 @@
 import React from "react";
 import { DaysInMonth } from "../../constant";
 
-import { isToday } from "../utils";
+const isToday = (date, month, year) => {
+  let currentDate = new Date();
+  return (
+    currentDate.getDate() === date &&
+    currentDate.getMonth() === month &&
+    currentDate.getFullYear() === year
+  );
+};
 
 const MonthDate = ({ startDay, month, year }) => {
   const months = Object.keys(DaysInMonth);

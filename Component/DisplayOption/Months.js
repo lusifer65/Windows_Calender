@@ -14,23 +14,25 @@ const Months = () => {
   return (
     <div className="box">
       <div className="month">
-        <p className="paraWithCursor"
-        onClick={()=>{
-          dispatch(DisplayType('year'))
-        }}
-        >{year}</p>
+        <p
+          className="paraWithCursor"
+          onClick={() => {
+            dispatch(DisplayType("year"));
+          }}
+        >
+          {year}
+        </p>
         <div className="btn">
           <button
             onClick={() => {
-              dispatch(changeDate(0,year-1));
+              dispatch(changeDate(0, year - 1));
             }}
           >
             <i className="arrow up"></i>
           </button>
           <button
             onClick={() => {
-                dispatch(changeDate(0,year+1));
-
+              dispatch(changeDate(0, year + 1));
             }}
           >
             <i className="arrow down"></i>
@@ -43,7 +45,7 @@ const Months = () => {
             key={index}
             onClick={() => {
               dispatch(changeDate(index, year));
-              dispatch(DisplayType('date'))
+              dispatch(DisplayType("date"));
             }}
           >
             <p>{item.substring(0, 3)}</p>
