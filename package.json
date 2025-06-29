@@ -3,19 +3,29 @@
   "version": "1.0.0",
   "description": "Calender App",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "test": "jest"
   },
   "author": "akash",
   "license": "ISC",
   "dependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "jest": "^30.0.3",
+    "jest-environment-jsdom": "^30.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "redux": "^4.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.27.7",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@testing-library/react": "^13.4.0",
+    "babel-jest": "^30.0.2",
+    "identity-obj-proxy": "^3.0.0",
     "parcel": "^2.8.3",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "redux-mock-store": "^1.5.5"
   }
 }
