@@ -2,7 +2,7 @@
 
 import { DaysInMonth } from "../../constant";
 
-import { isToday } from "../Utils";
+import { isToday } from "../utils";
 
 const MonthDate = ({ startDay, month, year }) => {
   const months = Object.keys(DaysInMonth);
