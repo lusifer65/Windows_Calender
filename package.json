@@ -5,7 +5,10 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "clean": "rmdir /s /q dist .parcel-cache",
+    "dev": "parcel index.html --open"
   },
   "author": "akash",
   "license": "ISC",
