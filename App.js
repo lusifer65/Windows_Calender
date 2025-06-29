@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import Card from "./Component/Card/Card";
-import TitleBar from "./Component/DisplayOption/TitleBar";
-import store from "./redux/Store";
+import Card from "./Component/Card/Card.js";
+import TitleBar from "./Component/DisplayOption/TitleBar.js";
+import store from "./redux/Store.js";
 import "./style.css";
 
 const App = () => {

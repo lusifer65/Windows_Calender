@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import "./CardStyle.css";
 
-import { DaysInMonth, weekDays } from "../../constant";
-import { changeDate, DisplayType } from "../../redux/action";
-import MonthDate from "../DisplayOption/MonthsDate";
-import Months from "../DisplayOption/Months";
-import Year from "../DisplayOption/Year";
+import { DaysInMonth, weekDays } from "../../constant.js";
+import { changeDate, DisplayType } from "../../redux/action.js";
+import MonthDate from "../DisplayOption/MonthsDate.js";
+import Months from "../DisplayOption/Months.js";
+import Year from "../DisplayOption/Year.js";
 
 const Card = () => {
   const [startDay, setStartDay] = useState(0);
